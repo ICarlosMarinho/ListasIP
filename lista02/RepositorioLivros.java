@@ -28,9 +28,9 @@ public class RepositorioLivros
             return false;
         }
         
-        for (Livro livro : this.livros) 
+        for (int i = 0; i < this.quantLivros; i++) 
         {
-            if (liv.getCodigo() == livro.getCodigo()) 
+            if (liv.getCodigo() == livros[i].getCodigo()) 
             {
                 return false;
             }
@@ -44,16 +44,60 @@ public class RepositorioLivros
     
     public Livro buscar(int cod)
     {
-        for (Livro livro : this.livros)
+        for (int i = 0; i < this.quantLivros; i++)
         {
-            if (cod == livro.getCodigo())
+            if (cod == livros[i].getCodigo())
             {
-                return livro;
+                return livros[i];
             }
         }
         
         return null;
     }
     
-    //**Desenvolver!!
+    public boolean remover(int cod)
+    {
+        int i;
+        
+        for(i = 0; i < this.quantLivros && cod != this.livros[i].getCodigo();)
+        {
+            i++;
+        }
+        
+        if(i == this.quantLivros)
+        {
+            return false;
+        }
+        
+        do
+        {
+            this.livros[i] = this.livros[i + 1];
+            
+            i++;
+        }
+        while(i < (this.quantLivros));
+        
+        this.quantLivros--;
+        
+        return true;
+    }
+    
+    public boolean alterar(Livro novoLivro)
+    {
+        int i;
+        
+        for (i = 0; i < this.quantLivros && livros[i].equals(novoLivro) == false;)
+        {
+            i++;
+        }
+        
+        if (i == this.quantLivros)
+        {
+            return false;
+        }
+        
+        livros[i] = novoLivro;
+        
+        return true;
+    }
 }

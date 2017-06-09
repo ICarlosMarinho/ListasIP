@@ -46,4 +46,16 @@ public class Livro
     {
         this.autor = autor;
     }
+    
+    public boolean equals(Livro liv)
+    {
+        return !(liv == null || this.codigo != liv.getCodigo());
+    }
+    
+    public String toString()
+    {
+        return ("\n\n*Codigo:\t" + this.codigo 
+                + "\n*Titulo:\t" + this.titulo 
+                + "\n*Autor:\t\t" + this.autor);
+    }
 }
