@@ -9,7 +9,6 @@ public class AplicacaoRepositorioLivros
         Scanner scan = new Scanner(System.in);
         int auxSair = 0;
         int auxCodigo;
-        int auxCodigoBusca;
         String auxTitulo;
         String auxAutor;
         Livro auxLivro;
