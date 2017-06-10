@@ -1,7 +1,7 @@
 package lista02;
 import java.util.Scanner;
 
-public class ApricacaoRepositorioLivros 
+public class AplicacaoRepositorioLivros 
 {
     public static void main(String[] args)
     {
